@@ -7,5 +7,9 @@ public class HelloWorld {
         System.out.println("Test to myself");
         System.out.println("More test");
         System.out.println("Jerads Test");
+
+        System.out.println("Kuma's Test");
+        String greatness = "Kuma";
+        int level   = 100;
     }
 }

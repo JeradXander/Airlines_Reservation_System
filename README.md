@@ -3,19 +3,19 @@
 
 ##Meet the Team
 
-###Mark
+### Mark
 
 Dev Description
 
 ![screen\s](images/Mark.png)
 
-###Kuma
+### Kuma
 
 Dev Description
 
 ![screen\s](images/Kuma.png)
 
-###Jerad
+### Jerad
 
 Dev Description
 

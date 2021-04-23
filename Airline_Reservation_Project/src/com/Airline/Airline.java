@@ -5,6 +5,8 @@ import java.util.Date;
 public class Airline {
 
     private int price;
+    private String airplane;
+    private Date date;
 
     public int getPrice() {
         return price;
@@ -30,6 +32,4 @@ public class Airline {
         this.date = date;
     }
 
-    private String airplane;
-    private Date date;
 }

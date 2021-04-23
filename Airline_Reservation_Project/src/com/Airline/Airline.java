@@ -4,32 +4,21 @@ import java.util.Date;
 
 public class Airline {
 
-    private int price;
-    private String airplane;
-    private Date date;
 
-    public int getPrice() {
-        return price;
+    private String airplaneName;
+
+
+    public Airline(String airplaneNameArg) {
+
+        setAirplane(airplaneNameArg);
+
     }
 
-    public void setPrice(int price) {
-        this.price = price;
+    public String getAirplaneName() {
+        return airplaneName;
     }
 
-    public String getAirplane() {
-        return airplane;
+    public void setAirplane(String airplaneArg) {
+        airplaneName = airplaneArg;
     }
-
-    public void setAirplane(String airplane) {
-        this.airplane = airplane;
-    }
-
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
-    }
-
 }

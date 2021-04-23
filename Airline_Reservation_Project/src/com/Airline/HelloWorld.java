@@ -10,6 +10,8 @@ public class HelloWorld {
 
         System.out.println("Kuma's Test");
         String greatness = "Kuma";
-        int level   = 100;
+        double level   = 10_000;
+
+        System.out.println(greatness + level);
     }
 }

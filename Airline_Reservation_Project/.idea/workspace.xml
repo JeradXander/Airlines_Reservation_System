@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4d08c05a-8125-485f-92ec-74dddc0e7900" name="Default Changelist" comment="airline class with fields">
-      <change afterPath="$PROJECT_DIR$/src/com/locations/Location.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/tickets/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tickets/Ticket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/client/AirlineClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/client/AirlineClient.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -1,8 +1,9 @@
 package com.airline;
 
-import com.tickets.BusinessTicket;
-import com.tickets.Ticket;
-import com.tickets.TicketsCalculator;
+import com.locations.Location;
+import com.locations.Timezone;
+import com.tickets.*;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,6 +12,7 @@ public class Flights {
     //fields
    List<Ticket> tickets = new ArrayList<>();
 
+
    public Flights(){
 
    }
@@ -18,7 +20,10 @@ public class Flights {
     public List<Ticket> getTickets() {
 
        //instantiating lists
-        tickets.add(new Ticket(10,new BusinessTicket()));
+
+        tickets.add(new Ticket(10,new EconomyTicket(new Location("Seattle", Timezone.PST), new Location("San francisco", Timezone.PST))));
+        tickets.add(new Ticket(10,new BusinessTicket(new Location("Seattle", Timezone.PST), new Location("San francisco", Timezone.PST))));
+        tickets.add(new Ticket(10,new FirstClassTicket(new Location("Seattle", Timezone.PST), new Location("San francisco", Timezone.PST))));
 
         return tickets;
     }

@@ -1,19 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4d08c05a-8125-485f-92ec-74dddc0e7900" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/airline/Flights.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/passengers/Passenger.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/tickets/BusinessTicket.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/tickets/EconomyTicket.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/tickets/FirstClassTicket.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/tickets/Ticket.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/tickets/TicketsCalculator.java" afterDir="false" />
+    <list default="true" id="4d08c05a-8125-485f-92ec-74dddc0e7900" name="Default Changelist" comment="airline class with fields">
+      <change afterPath="$PROJECT_DIR$/src/com/locations/Location.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Airline_Reservation_Project/com/Airline/Airline.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Airline_Reservation_Project/com/Airline/Airline.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Airline_Reservation_Project/com/Airline/AirlineClient.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/Airline/Airline.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/airline/Airline.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/Airline/AirlineClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/client/AirlineClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/tickets/Ticket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tickets/Ticket.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +32,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../IntroJava/workspace" />
   </component>
   <component name="RunManager" selected="Application.AirlineClient (1)">
     <configuration name="AirlineClient (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">

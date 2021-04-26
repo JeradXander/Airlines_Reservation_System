@@ -3,9 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="4d08c05a-8125-485f-92ec-74dddc0e7900" name="Default Changelist" comment="airline class with fields">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Airline_Reservation_Project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Airline_Reservation_Project.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Airline_Reservation_Project/com/Airline/Airline.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Airline_Reservation_Project/com/Airline/Airline.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Airline_Reservation_Project/com/client/AirlineClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Airline_Reservation_Project/com/client/AirlineClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Airline_Reservation_Project/com/locations/Location.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Airline_Reservation_Project/com/locations/Location.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Airline_Reservation_Project/com/locations/Timezone.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Airline_Reservation_Project/com/locations/Timezone.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Airline_Reservation_Project/com/tickets/BusinessTicket.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Airline_Reservation_Project/com/tickets/BusinessTicket.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Airline_Reservation_Project/com/tickets/EconomyTicket.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Airline_Reservation_Project/com/tickets/EconomyTicket.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Airline_Reservation_Project/com/tickets/FirstClassTicket.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Airline_Reservation_Project/com/tickets/FirstClassTicket.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/airline/Airline.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/airline/Airline.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/client/AirlineClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/client/AirlineClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/locations/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/locations/Location.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,16 +60,10 @@
       <recent name="com.client" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.BusinessTicket">
+  <component name="RunManager" selected="Application.AirlineClient (1)">
     <configuration name="AirlineClient (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.client.AirlineClient" />
       <module name="Airline_Reservation_Project" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.client.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -70,12 +71,6 @@
     <configuration name="AirlineClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.Airline.client.AirlineClient" />
       <module name="Airline_Reservation_Project" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.Airline.client.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -83,12 +78,21 @@
     <configuration name="BusinessTicket" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.tickets.BusinessTicket" />
       <module name="Airline_Reservation_Project" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AirlineClientTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Airline_Reservation_Project" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.tickets.*" />
+          <option name="PATTERN" value="com.client.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="com.client" />
+      <option name="MAIN_CLASS_NAME" value="com.client.AirlineClientTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -111,9 +115,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.AirlineClient (1)" />
+        <item itemvalue="JUnit.AirlineClientTest" />
         <item itemvalue="Application.BusinessTicket" />
         <item itemvalue="JUnit.AirlineClientTest.userSelectsAirlineFromList" />
-        <item itemvalue="Application.AirlineClient (1)" />
         <item itemvalue="Application.AirlineClient" />
       </list>
     </recent_temporary>

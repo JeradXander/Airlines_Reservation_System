@@ -5,11 +5,7 @@ import com.locations.Location;
 import com.locations.Timezone;
 
 import java.sql.Time;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
-import java.util.TimeZone;
+import java.util.*;
 
 public class AirlineClient {
 
@@ -48,8 +44,15 @@ public class AirlineClient {
         airlineSelected = listOfAirlines.get(valueReturnedFromInputMethod -1);
 
 
-        System.out.println("You want to fly from " + origin + " to " + destination + " with " + airlineSelected);
-//        //this is if
+
+        List<String> dates = new ArrayList<>(airlineSelected.getAirlineFlights().keySet());
+        Collections.sort(dates);
+        valueReturnedFromInputMethod = getValidUserInput("What day would you like to fly on?",dates);
+
+
+        System.out.println("You're looking at flying from " + origin + " to " + destination + " with " + airlineSelected + " on " + dates.get(valueReturnedFromInputMethod - 1) + ("."));
+//
+// this is if
 //        System.out.println("Which airline would you like to fly with?");
 //
 //        for(Airline airline:listOfAirlines){

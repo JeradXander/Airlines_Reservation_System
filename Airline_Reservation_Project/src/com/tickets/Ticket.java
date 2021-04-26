@@ -13,4 +13,8 @@ public class Ticket {
     public double pay(){
         return ticketsCalculator.calculateTicketPrice();
     }
+
+
+
+
 }

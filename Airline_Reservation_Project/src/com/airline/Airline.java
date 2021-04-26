@@ -21,4 +21,9 @@ public class Airline {
     public void setAirLineName(String airplaneArg) {
         airLineName = airplaneArg;
     }
+
+    @Override
+    public String toString() {
+        return getAirLineName();
+    }
 }

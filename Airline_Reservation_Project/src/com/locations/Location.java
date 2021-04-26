@@ -22,7 +22,8 @@ public class Location {
         this.name = name;
     }
 
-
-
-
+    @Override
+    public String toString() {
+        return getName();
+    }
 }

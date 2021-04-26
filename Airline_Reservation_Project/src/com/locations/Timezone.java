@@ -1,5 +1,6 @@
 package com.locations;
 
 public enum Timezone {
-    PST, EST, CST
+    //has to be in order because we calculate the price depending on the ordinal number
+    PST, CST, EST
 }

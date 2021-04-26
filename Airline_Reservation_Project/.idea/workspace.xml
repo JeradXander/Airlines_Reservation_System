@@ -3,11 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="4d08c05a-8125-485f-92ec-74dddc0e7900" name="Default Changelist" comment="airline class with fields">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/airline/Airline.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/airline/Airline.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/client/AirlineClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/client/AirlineClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/locations/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/locations/Location.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/locations/Timezone.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/locations/Timezone.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/tickets/BusinessTicket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tickets/BusinessTicket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/tickets/EconomyTicket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tickets/EconomyTicket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/tickets/FirstClassTicket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/tickets/FirstClassTicket.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +40,7 @@
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../IntroJava/workspace" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />

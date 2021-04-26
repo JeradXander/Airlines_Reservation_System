@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4d08c05a-8125-485f-92ec-74dddc0e7900" name="Default Changelist" comment="airline class with fields">
-      <change afterPath="$PROJECT_DIR$/test/com/client/AirlineClientTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Airline_Reservation_Project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Airline_Reservation_Project.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/airline/Airline.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/airline/Airline.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/client/AirlineClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/client/AirlineClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/locations/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/locations/Location.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +22,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectId" id="1rXRvQjL0Hah0aHYk64YeGu9Imw" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -52,7 +61,7 @@
       <recent name="com.client" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.AirlineClientTest.userSelectsAirlineFromList">
+  <component name="RunManager" selected="Application.AirlineClient (1)">
     <configuration name="AirlineClient (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.client.AirlineClient" />
       <module name="Airline_Reservation_Project" />
@@ -97,8 +106,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.AirlineClientTest.userSelectsAirlineFromList" />
         <item itemvalue="Application.AirlineClient (1)" />
+        <item itemvalue="JUnit.AirlineClientTest.userSelectsAirlineFromList" />
         <item itemvalue="Application.AirlineClient" />
       </list>
     </recent_temporary>

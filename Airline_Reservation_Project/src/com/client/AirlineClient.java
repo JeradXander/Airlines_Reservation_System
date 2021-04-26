@@ -8,12 +8,20 @@ import java.sql.Time;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Scanner;
 import java.util.TimeZone;
 
 public class AirlineClient {
 
+
     private static List<Location> listOfLocations = new ArrayList<>();
     private static List<Airline> listOfAirlines = new ArrayList<>();
+    private static int valueReturnedFromInputMethod;
+    private static Location origin;
+    private static Location destination;
+    private static Airline airlineSelected;
+
+    static Scanner inputScanner = new Scanner(System.in);
 
     public static void main(String[] args) {
 
@@ -23,12 +31,24 @@ public class AirlineClient {
         //gets full list of locations
         getFullListOfLocations();
 
-        System.out.println("Welcome to ReplyBack Airline Reservation System, Which airline would you like to fly with?");
-        for(int i = 0; i < listOfAirlines.size();i++){
-            System.out.println((i+ 1) + ". " + listOfAirlines.get(i).getAirLineName());
-        }
-        System.out.println("Which airline would you like to fly with?");
+        //returning value for origin
+        valueReturnedFromInputMethod = getValidUserInput("Type in the number associated with which location would you like to fly from?",listOfLocations);
+        //setting origin to value
+        origin = listOfLocations.get(valueReturnedFromInputMethod-1);
+        //removing origin from available list
+        listOfLocations.remove(valueReturnedFromInputMethod-1);
 
+        //getting value for destination
+        valueReturnedFromInputMethod  = getValidUserInput("Type in the number associated with which location would you like to fly to?",listOfLocations);
+        //setting destination to value
+        destination = listOfLocations.get(valueReturnedFromInputMethod-1);
+
+        //getting value for Airline
+        valueReturnedFromInputMethod = getValidUserInput("Welcome to ReplyBack Airline Reservation System, Which airline would you like to fly with?",listOfAirlines);
+        airlineSelected = listOfAirlines.get(valueReturnedFromInputMethod -1);
+
+
+        System.out.println("You want to fly from " + origin + " to " + destination + " with " + airlineSelected);
 //        //this is if
 //        System.out.println("Which airline would you like to fly with?");
 //
@@ -37,9 +57,44 @@ public class AirlineClient {
 //        }
 
 
-
-//        System.out.println(greatness + level);
     }
+
+
+    private static int getValidUserInput(String outToUserArg,List<?> listToiteratThroughArg){
+        //initial output
+        System.out.println("\n" + outToUserArg);
+        //method variables
+        boolean isValidNumber = false;
+        int userInputInt = 0;
+
+        //loop while userInput is not a valid selection
+        while (!isValidNumber){
+            for(int i = 0; i < listToiteratThroughArg.size();i++){
+                System.out.println((i+ 1) + ". " + listToiteratThroughArg.get(i).toString());
+            }
+
+            String userIn = inputScanner.nextLine();
+
+            try{
+                //user
+                userInputInt = Integer.parseInt(userIn);
+
+                if(userInputInt > 0 && userInputInt <= listToiteratThroughArg.size()){
+                    //is valid so returning and exiting method
+                    return userInputInt;
+                }else {
+                    System.out.println("You must select a number from the list");
+                }
+            }catch (NumberFormatException e){
+                //not valid so return output to user and setting valid to false to continue while loop
+                System.out.println("You must select a number from the list");
+                isValidNumber = false;
+            }
+        }
+        return 0;
+    }
+
+
     private static void getFullListOfAirlines(){
         Airline[] airlinesToChooseFrom = {
                 new Airline("TLG Airlines"),
@@ -58,7 +113,7 @@ public class AirlineClient {
 
     private static void getFullListOfLocations(){
         //add all because intelliJ is smart
-         Location[] locationsWithTimezone = {
+        Location[] locationsWithTimezone = {
                 new Location("San Francisco", Timezone.PST),
                 new Location("LA", Timezone.PST),
                 new Location("Seattle", Timezone.PST),
@@ -71,6 +126,5 @@ public class AirlineClient {
         };
         listOfLocations.addAll(Arrays.asList(locationsWithTimezone));
     }
-
 
 }

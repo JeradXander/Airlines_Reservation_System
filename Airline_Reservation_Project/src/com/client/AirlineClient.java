@@ -17,9 +17,8 @@ public class AirlineClient {
 
     public static void main(String[] args) {
 
-        listOfAirlines.add(new Airline("TLG Airlines"));
-        listOfAirlines.add(new Airline("Amazon Airlines"));
-        listOfAirlines.add(new Airline("Apprenti Airlines"));
+        //get full list of Airlines
+        getFullListOfAirlines();
 
         //gets full list of locations
         getFullListOfLocations();
@@ -40,6 +39,21 @@ public class AirlineClient {
 
 
 //        System.out.println(greatness + level);
+    }
+    private static void getFullListOfAirlines(){
+        Airline[] airlinesToChooseFrom = {
+                new Airline("TLG Airlines"),
+                new Airline("Amazon Airlines"),
+                new Airline("Apprenti Airlines"),
+                new Airline("Doge Airlines Airlines"),
+                new Airline("Kuma Airlines"),
+                new Airline("Mark Airlines"),
+                new Airline("Jerad Airlines"),
+                new Airline("DuckChampion Airlines"),
+                new Airline("Java Airlines"),
+                new Airline("Wheat Thins Airlines")
+        };
+        listOfAirlines.addAll(Arrays.asList(airlinesToChooseFrom));
     }
 
     private static void getFullListOfLocations(){

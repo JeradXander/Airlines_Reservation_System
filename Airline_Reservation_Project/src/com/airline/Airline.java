@@ -14,7 +14,7 @@ public class Airline {
 
     HashMap<String, List<Flights>> airlineFlights;
     List<Flights> flightsList;
-
+    List<Flights> flightsListTest;
 
     public Airline(String airplaneNameArg) {
         setAirLineName(airplaneNameArg);
@@ -35,6 +35,7 @@ public class Airline {
         flightsList.add(new Flights(1000,getOrigin(),getDestination()));
         flightsList.add(new Flights(33000,getOrigin(),getDestination()));
 
+        flightsListTest = new ArrayList<>();
 
         airlineFlights = new HashMap<>();
         airlineFlights.put("04/26/2021",flightsList);

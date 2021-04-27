@@ -20,18 +20,12 @@ public class Flights {
         flightId = flightIdArg;
         origin = originArg;
         destination = destinationArg;
+        initialTicketList();
     }
 
     public List<Ticket> getTickets() {
 
-        //instantiating lists
-
-        if(flightId == 1000){
-            tickets.add(new Ticket(10, new EconomyTicket(origin, destination)));
-            tickets.add(new Ticket(10, new BusinessTicket(origin, destination)));
-            tickets.add(new Ticket(10, new FirstClassTicket(origin, destination)));
-        }
-
+        //returning list
         return tickets;
     }
 
@@ -67,5 +61,11 @@ public class Flights {
     @Override
     public String toString() {
         return String.valueOf(flightId);
+    }
+
+    private void initialTicketList(){
+        tickets.add(new Ticket(10, new EconomyTicket(origin, destination)));
+        tickets.add(new Ticket(11, new BusinessTicket(origin, destination)));
+        tickets.add(new Ticket(12, new FirstClassTicket(origin, destination)));
     }
 }

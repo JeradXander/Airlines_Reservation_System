@@ -26,9 +26,11 @@ public class Flights {
 
         //instantiating lists
 
-        tickets.add(new Ticket(10, new EconomyTicket(origin, destination)));
-        tickets.add(new Ticket(10, new BusinessTicket(origin, destination)));
-        tickets.add(new Ticket(10, new FirstClassTicket(origin, destination)));
+        if(flightId == 1000){
+            tickets.add(new Ticket(10, new EconomyTicket(origin, destination)));
+            tickets.add(new Ticket(10, new BusinessTicket(origin, destination)));
+            tickets.add(new Ticket(10, new FirstClassTicket(origin, destination)));
+        }
 
         return tickets;
     }

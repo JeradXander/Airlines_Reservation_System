@@ -1,8 +1,10 @@
 package com.client;
 
 import com.airline.Airline;
+import com.airline.Flights;
 import com.locations.Location;
 import com.locations.Timezone;
+import com.tickets.Ticket;
 
 import java.sql.Time;
 import java.util.*;
@@ -16,8 +18,10 @@ public class AirlineClient {
     private static Location origin;
     private static Location destination;
     private static Airline airlineSelected;
+    private static List<Ticket> customerTicketList = new ArrayList<>();
+    private static boolean flightHasTickets = false;
 
-    static Scanner inputScanner = new Scanner(System.in);
+    private static Scanner inputScanner = new Scanner(System.in);
 
     public static void main(String[] args) {
 
@@ -56,10 +60,19 @@ public class AirlineClient {
         int dateSelected = 0;
         dateSelected = getValidUserInput("What day would you like to fly on?",dates);
 
-        //getting list of flights from date selected
-        valueReturnedFromInputMethod = getValidUserInput("What flight would you like?",airlineSelected.getAirlineFlights().get(dates.get(dateSelected-1)));
+        while (!flightHasTickets) {
+            //getting list of flights from date selected
+            valueReturnedFromInputMethod = getValidUserInput("What flight would you like?", airlineSelected.getAirlineFlights().get(dates.get(dateSelected - 1)));
 
+            Flights flightSelected = airlineSelected.getAirlineFlights().get(dates.get(dateSelected - 1)).get(valueReturnedFromInputMethod - 1);
 
+            if (flightSelected.getTickets().size() == 0) {
+                System.out.println("No flights available on flight " + flightSelected.getFlightId() + ". Please select another flight");
+                flightHasTickets = false;
+            }else{
+                flightHasTickets = true;
+            }
+        }
         //test output
         System.out.println("You're looking at flying from " + origin + " to " + destination + " with " + airlineSelected + " on " + dates.get(valueReturnedFromInputMethod - 1) + (".") + " on flight " +
                            airlineSelected.getAirlineFlights().get(dates.get(dateSelected -1)).get(valueReturnedFromInputMethod-1));
@@ -75,6 +88,7 @@ public class AirlineClient {
         int userInputInt = 0;
 
         //loop while userInput is not a valid selection
+
         while (!isValidNumber){
             for(int i = 0; i < listToiteratThroughArg.size();i++){
                 System.out.println((i+ 1) + ". " + listToiteratThroughArg.get(i).toString());

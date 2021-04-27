@@ -41,4 +41,9 @@ public class EconomyTicket implements TicketsCalculator{
         double initialTicketPrice = 500 + (difference * 100);
         return initialTicketPrice + bagFee;
     }
+
+    @Override
+    public String toString() {
+        return "Economy class ticket ";
+    }
 }

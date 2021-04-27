@@ -5,8 +5,8 @@ import com.locations.Timezone;
 
 public class BusinessTicket implements TicketsCalculator{
 
-    Location origin;
-    Location destination;
+    private Location origin;
+    private Location destination;
 
     public BusinessTicket(Location originArgs, Location destinationArgs) {
         origin = originArgs;
@@ -24,5 +24,10 @@ public class BusinessTicket implements TicketsCalculator{
 
         //calculated price from initial ticket price to business multiplier
         return initialTicketPrice * businessTicketMultiplier;
+    }
+
+    @Override
+    public String toString() {
+        return "Business class ticket ";
     }
 }

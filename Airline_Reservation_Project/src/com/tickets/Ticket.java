@@ -2,12 +2,14 @@ package com.tickets;
 
 import com.locations.Location;
 
+//this has to be abstract?
 public class Ticket {
 
     private int ticketId;
     private TicketsCalculator ticketsCalculator;
 
 
+    public Ticket(){}
 
     public Ticket(int ticketIdArgs, TicketsCalculator ticketsCalculatorArgs) {
         ticketId = ticketIdArgs;
@@ -15,16 +17,12 @@ public class Ticket {
 
     }
 
-
-
     public double pay(){
         return ticketsCalculator.calculateTicketPrice();
     }
 
-
     @Override
     public String toString() {
-        return
-               "ticketId=" + ticketId;
+        return ticketsCalculator.toString() + "ticketId = " + ticketId;
     }
 }

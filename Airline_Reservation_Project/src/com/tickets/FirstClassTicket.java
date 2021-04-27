@@ -4,8 +4,8 @@ import com.locations.Location;
 
 public class FirstClassTicket implements TicketsCalculator{
 
-    Location origin;
-    Location destination;
+    private Location origin;
+    private Location destination;
 
     public FirstClassTicket(Location originArgs, Location destinationArgs) {
         origin = originArgs;
@@ -23,5 +23,10 @@ public class FirstClassTicket implements TicketsCalculator{
 
         //calculated price from initial ticket price to business multiplier
         return initialTicketPrice * firstClassTicketMultiplier;
+    }
+
+    @Override
+    public String toString() {
+        return "First class ticket ";
     }
 }

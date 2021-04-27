@@ -5,4 +5,5 @@ import com.locations.Location;
 public interface TicketsCalculator {
 
     double calculateTicketPrice();
+    String toString();
 }

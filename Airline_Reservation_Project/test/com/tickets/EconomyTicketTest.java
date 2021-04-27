@@ -34,4 +34,23 @@ public class EconomyTicketTest {
         assertEquals(expectedEconomyTicketPrice, actualEconomyTicketPrice, 0.001);
     }
 
+    @Test
+    public void calculateEconomyTicketPriceWithInvalidNumberOfBags() {
+        Location origin = new Location("Philadelphia", Timezone.EST);
+        Location destination = new Location("NYC", Timezone.EST);
+
+        EconomyTicket economyTicket = new EconomyTicket(origin,destination,-12);
+
+        // We got 500 + 2(10) for bags
+        double expectedEconomyTicketPrice = 500 ;
+        double actualEconomyTicketPrice = economyTicket.calculateTicketPrice();
+        assertEquals(expectedEconomyTicketPrice, actualEconomyTicketPrice, 0.001);
+
+        //anything above two bags check in will be invalid
+        EconomyTicket economyTicket2 = new EconomyTicket(origin,destination,10);
+        double expectedEconomyTicketPrice2 = 500 ;
+        double actualEconomyTicketPrice2 = economyTicket.calculateTicketPrice();
+        assertEquals(expectedEconomyTicketPrice2, actualEconomyTicketPrice2, 0.001);
+    }
+
 }

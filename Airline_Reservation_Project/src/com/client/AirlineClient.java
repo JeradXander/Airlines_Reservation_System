@@ -39,26 +39,30 @@ public class AirlineClient {
         //setting destination to value
         destination = listOfLocations.get(valueReturnedFromInputMethod-1);
 
+
         //getting value for Airline
         valueReturnedFromInputMethod = getValidUserInput("Welcome to ReplyBack Airline Reservation System, Which airline would you like to fly with?",listOfAirlines);
+        //setting user inout to airline selected
         airlineSelected = listOfAirlines.get(valueReturnedFromInputMethod -1);
+        //adding origin and destination to airline to populate the correct flights
+        airlineSelected.setDestination(destination);
+        airlineSelected.setOrigin(origin);
 
-
-
+        //creating list to hold key values
         List<String> dates = new ArrayList<>(airlineSelected.getAirlineFlights().keySet());
+        //sorting dates
         Collections.sort(dates);
-        valueReturnedFromInputMethod = getValidUserInput("What day would you like to fly on?",dates);
+        //getting user selection from list of dates
+        int dateSelected = 0;
+        dateSelected = getValidUserInput("What day would you like to fly on?",dates);
+
+        //getting list of flights from date selected
+        valueReturnedFromInputMethod = getValidUserInput("What flight would you like?",airlineSelected.getAirlineFlights().get(dates.get(dateSelected-1)));
 
 
-        System.out.println("You're looking at flying from " + origin + " to " + destination + " with " + airlineSelected + " on " + dates.get(valueReturnedFromInputMethod - 1) + ("."));
-//
-// this is if
-//        System.out.println("Which airline would you like to fly with?");
-//
-//        for(Airline airline:listOfAirlines){
-//            System.out.println();
-//        }
-
+        //test output
+        System.out.println("You're looking at flying from " + origin + " to " + destination + " with " + airlineSelected + " on " + dates.get(valueReturnedFromInputMethod - 1) + (".") + " on flight " +
+                           airlineSelected.getAirlineFlights().get(dates.get(dateSelected -1)).get(valueReturnedFromInputMethod-1));
 
     }
 

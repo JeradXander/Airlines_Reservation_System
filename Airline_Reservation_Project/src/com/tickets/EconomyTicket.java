@@ -4,9 +4,9 @@ import com.locations.Location;
 
 public class EconomyTicket implements TicketsCalculator{
 
-    Location origin;
-    Location destination;
-    int bags = 0;
+    private Location origin;
+    private Location destination;
+    private int bags = 0;
 
 
     public EconomyTicket(Location originArgs, Location destinationArgs) {
@@ -26,6 +26,7 @@ public class EconomyTicket implements TicketsCalculator{
     }
 
     public void setBags(int bags) {
+        if (bags >=0 && bags <= 2)
         this.bags = bags;
     }
 

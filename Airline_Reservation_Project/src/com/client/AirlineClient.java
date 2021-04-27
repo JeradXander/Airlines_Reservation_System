@@ -11,18 +11,24 @@ import java.util.*;
 
 public class AirlineClient {
 
-
+    //fields for client class
+    //lists
     private static List<Location> listOfLocations = new ArrayList<>();
     private static List<Airline> listOfAirlines = new ArrayList<>();
+    private static List<Ticket> customerTicketList = new ArrayList<>();
+    //values
     private static int valueReturnedFromInputMethod;
     private static Location origin;
     private static Location destination;
     private static Airline airlineSelected;
-    private static List<Ticket> customerTicketList = new ArrayList<>();
+    private static Flights flightSelected;
     private static boolean flightHasTickets = false;
 
+    //scanner
     private static Scanner inputScanner = new Scanner(System.in);
 
+
+    //start of main
     public static void main(String[] args) {
 
         //get full list of Airlines
@@ -60,22 +66,39 @@ public class AirlineClient {
         int dateSelected = 0;
         dateSelected = getValidUserInput("What day would you like to fly on?",dates);
 
+        //loop until customer selects flight with tickets available
         while (!flightHasTickets) {
             //getting list of flights from date selected
             valueReturnedFromInputMethod = getValidUserInput("What flight would you like?", airlineSelected.getAirlineFlights().get(dates.get(dateSelected - 1)));
 
-            Flights flightSelected = airlineSelected.getAirlineFlights().get(dates.get(dateSelected - 1)).get(valueReturnedFromInputMethod - 1);
+            //setting variable to use later to get tickets
+             flightSelected = airlineSelected.getAirlineFlights().get(dates.get(dateSelected - 1)).get(valueReturnedFromInputMethod - 1);
 
+             //conditional if tickets are available
             if (flightSelected.getTickets().size() == 0) {
+                //tellling user and repeating loop
                 System.out.println("No flights available on flight " + flightSelected.getFlightId() + ". Please select another flight");
                 flightHasTickets = false;
             }else{
+                //flight has tickets exiting loop
                 flightHasTickets = true;
             }
         }
+
+        //outputing tickets and getting the selected ticket
+        int ticketNum = getValidUserInput("Please select the ticket",flightSelected.getTickets());
+
+        //adding ticket to customers list for now
+        customerTicketList.add(flightSelected.getTickets().get(ticketNum-1));
+        //removing ticket from available tickets on flight
+        flightSelected.getTickets().remove(ticketNum-1);
+
         //test output
         System.out.println("You're looking at flying from " + origin + " to " + destination + " with " + airlineSelected + " on " + dates.get(valueReturnedFromInputMethod - 1) + (".") + " on flight " +
-                           airlineSelected.getAirlineFlights().get(dates.get(dateSelected -1)).get(valueReturnedFromInputMethod-1));
+                           airlineSelected.getAirlineFlights().get(dates.get(dateSelected -1)).get(valueReturnedFromInputMethod-1) + " ticket number " + customerTicketList.toString());
+
+        //test output to make sure ticket were updated.
+        System.out.println(flightSelected.getTickets());
 
     }
 

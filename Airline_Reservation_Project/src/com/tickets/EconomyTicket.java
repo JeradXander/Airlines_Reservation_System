@@ -44,6 +44,6 @@ public class EconomyTicket implements TicketsCalculator{
 
     @Override
     public String toString() {
-        return "Economy class ticket ";
+        return "Economy class ticket";
     }
 }

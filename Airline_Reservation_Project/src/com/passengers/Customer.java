@@ -8,15 +8,19 @@ import com.tickets.Ticket;
 import java.util.List;
 
 public class Customer {
+
+    //stretch goal fields
     private String customerName = "Billy Bob";
     private int customerId = 1;
+
+    //fields
     private ShoppingCart customerShoppingCart;
     private List<Ticket> ticketList;
     private String date;
     private Flights flight;
     private Airline airline;
 
-
+    //constructor
     public Customer(String dateArgs, Flights flightSelectedArgs, Airline airlineSelectedArgs, List<Ticket> ticketList) {
         date = dateArgs;
         flight = flightSelectedArgs;
@@ -25,11 +29,13 @@ public class Customer {
         setUpShoppingCart();
     }
 
-    private void setUpShoppingCart(){
-        customerShoppingCart = new ShoppingCart(airline,date,flight,ticketList);
+    //set up shopping cart
+    private void setUpShoppingCart() {
+        customerShoppingCart = new ShoppingCart(airline, date, flight, ticketList);
     }
 
-    public void shoppingCartOutput(){
+    //getting to string from chopping cart
+    public void shoppingCartOutput() {
         customerShoppingCart.toString();
     }
 

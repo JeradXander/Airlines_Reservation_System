@@ -17,7 +17,7 @@ public class AirlineClient {
     private static List<Location> listOfLocations = new ArrayList<>();
     private static List<Airline> listOfAirlines = new ArrayList<>();
     private static List<Ticket> customerTicketList = new ArrayList<>();
-    private static List<String> yesNo = new ArrayList<String>(Arrays.asList("Yes","No"));
+    private static List<String> yesNo = new ArrayList<String>(Arrays.asList("Yes", "No"));
     //values
     private static Customer currentCustomer;
     private static int valueReturnedFromInputMethod;
@@ -30,14 +30,14 @@ public class AirlineClient {
     private static String breakLine = "";
 
 
-
     //scanner
     private static Scanner inputScanner = new Scanner(System.in);
 
 
     //start of main
     public static void main(String[] args) {
-        breakLine = "-------------------------------------------------------------------------------------------------------";
+        breakLine =
+                "-------------------------------------------------------------------------------------------------------";
         //get full list of Airlines
         getFullListOfAirlines();
 
@@ -47,36 +47,41 @@ public class AirlineClient {
         clearConsole();
         //returning value for origin
         System.out.println("Welcome to ReplyBack Airline Reservation System \n" +
-                "You will be able to pick an origin and a destination and the airline you want to fly with. \n" +
-                "You will select a date and you will be given flights that corresponds to that date. \n" +
-                "After selecting a flight, you will be able to add tickets to your cart and checkout \n" +
-                "Press enter to continue:");
+                           "You will be able to pick an origin and a destination and the airline you want to fly with. \n" +
+                           "You will select a date and you will be given flights that corresponds to that date. \n" +
+                           "After selecting a flight, you will be able to add tickets to your cart and checkout \n" +
+                           "Press enter to continue:");
         inputScanner.nextLine();
 
         clearConsole();
 
-        valueReturnedFromInputMethod = getValidUserInput("Type in the number associated with which location would you like to fly from?",listOfLocations);
+        valueReturnedFromInputMethod = getValidUserInput(
+                "Type in the number associated with which location would you like to fly from?",
+                listOfLocations);
         //setting origin to value
-        origin = listOfLocations.get(valueReturnedFromInputMethod-1);
+        origin = listOfLocations.get(valueReturnedFromInputMethod - 1);
         //removing origin from available list
-        listOfLocations.remove(valueReturnedFromInputMethod-1);
+        listOfLocations.remove(valueReturnedFromInputMethod - 1);
         customerGuideline += "Flying from: " + origin;
         clearConsole();
 
         //getting value for destination
-        valueReturnedFromInputMethod  = getValidUserInput(customerGuideline + "\n" +
-                breakLine + "\nType in the number associated with which location would you like to fly to?",listOfLocations);
+        valueReturnedFromInputMethod = getValidUserInput(customerGuideline + "\n" +
+                                                         breakLine +
+                                                         "\nType in the number associated with which location would you like to fly to?",
+                                                         listOfLocations);
         //setting destination to value
-        destination = listOfLocations.get(valueReturnedFromInputMethod-1);
+        destination = listOfLocations.get(valueReturnedFromInputMethod - 1);
 
         customerGuideline += " -> " + destination;
         clearConsole();
 
         //getting value for Airline
         valueReturnedFromInputMethod = getValidUserInput(customerGuideline + "\n" +
-                breakLine + "\nWhich airline would you like to fly with?",listOfAirlines);
+                                                         breakLine + "\nWhich airline would you like to fly with?",
+                                                         listOfAirlines);
         //setting user inout to airline selected
-        airlineSelected = listOfAirlines.get(valueReturnedFromInputMethod -1);
+        airlineSelected = listOfAirlines.get(valueReturnedFromInputMethod - 1);
         //adding origin and destination to airline to populate the correct flights
         airlineSelected.setDestination(destination);
         airlineSelected.setOrigin(origin);
@@ -91,7 +96,7 @@ public class AirlineClient {
         //getting user selection from list of dates
         int dateSelected = 0;
         dateSelected = getValidUserInput(customerGuideline + "\n" +
-                breakLine + "\nWhat day would you like to fly on?",dates);
+                                         breakLine + "\nWhat day would you like to fly on?", dates);
 
         customerGuideline += "\nDate selected : " + dates.get(dateSelected - 1);
 
@@ -100,65 +105,85 @@ public class AirlineClient {
             clearConsole();
             //getting list of flights from date selected
             valueReturnedFromInputMethod = getValidUserInput(customerGuideline + "\n" +
-                    breakLine + "\nWhat flight would you like?", airlineSelected.getAirlineFlights().get(dates.get(dateSelected - 1)));
+                                                             breakLine + "\nWhat flight would you like?",
+                                                             airlineSelected.getAirlineFlights()
+                                                                            .get(dates.get(dateSelected - 1)));
 
             //setting variable to use later to get tickets
-             flightSelected = airlineSelected.getAirlineFlights().get(dates.get(dateSelected - 1)).get(valueReturnedFromInputMethod - 1);
+            flightSelected = airlineSelected.getAirlineFlights()
+                                            .get(dates.get(dateSelected - 1))
+                                            .get(valueReturnedFromInputMethod - 1);
 
-             //conditional if tickets are available
+            //conditional if tickets are available
             if (flightSelected.getTickets().size() == 0) {
                 //telling user and repeating loop
-                System.out.println("No flights available on flight " + flightSelected.getFlightId() + ". Please select another flight");
+                System.out.println("No flights available on flight " + flightSelected.getFlightId() +
+                                   ". Please select another flight");
                 flightHasTickets = false;
-            }else{
+            } else {
                 //flight has tickets exiting loop
                 flightHasTickets = true;
             }
         }
 
+        //adding info to guildine string
         customerGuideline += "\nFlight selected: " + flightSelected.getFlightId();
 
+        //variable for while loop
         int keepBuyingTickets = 0;
 
-        while(keepBuyingTickets == 0) {
+        while (keepBuyingTickets == 0) {
             clearConsole();
             //outputting tickets and getting the selected ticket
-            int ticketNum = getValidUserInput(customerGuideline  + "\nTicket(s) selected: " + customerTicketList.size()+ "\n"+
-                    breakLine + "\n" + "Please select the ticket", flightSelected.getTickets());
+            int ticketNum =
+                    getValidUserInput(customerGuideline + "\nTicket(s) selected: " + customerTicketList.size() + "\n" +
+                                      breakLine + "\n" + "Please select the ticket", flightSelected.getTickets());
 
             //adding ticket to customers list for now
             customerTicketList.add(flightSelected.getTickets().get(ticketNum - 1));
             //removing ticket from available tickets on flight
             flightSelected.getTickets().remove(ticketNum - 1);
 
-            if(flightSelected.getTickets().size() == 0){
-                System.out.println("\nYou just selected the last ticket");
+            //conditional for ticket size
+            if (flightSelected.getTickets().size() == 0) {
+                //output to user
+                System.out.println("\nYou just selected the last ticket! \nPress enter to continue to checkout:");
+                inputScanner.nextLine();
+                //exiting loop
                 keepBuyingTickets = 1;
-            }else {
+            } else {
+                //output to user
                 System.out.println("\nCurrent tickets in your cart:");
-                for(Ticket tickets : customerTicketList){
+                for (Ticket tickets : customerTicketList) {
                     System.out.println(tickets.toString());
                 }
+
                 clearConsole();
 
-                keepBuyingTickets = getValidUserInput(customerGuideline  + "\nTicket(s) selected: " + customerTicketList.size()+ "\n"+
-                                                      breakLine + "\n" +"Would you Like to continue buying more tickets on flight "
-                                                      + flightSelected.getFlightId() + " leaving on " + dates.get(dateSelected -1) + "\nSelecting no will take you to checkout!",yesNo) -1 ;
+                //output to user to keep selecting tickets
+                keepBuyingTickets = getValidUserInput(
+                        customerGuideline + "\nTicket(s) selected: " + customerTicketList.size() + "\n" +
+                        breakLine + "\n" + "Would you Like to continue buying more tickets on flight "
+                        + flightSelected.getFlightId() + " leaving on " + dates.get(dateSelected - 1) +
+                        "\nSelecting no will take you to checkout!", yesNo) - 1;
             }
         }
 
         clearConsole();
-        currentCustomer = new Customer(dates.get(dateSelected-1),flightSelected,airlineSelected,customerTicketList);
 
+        //creating customer with all selected values
+        currentCustomer =
+                new Customer(dates.get(dateSelected - 1), flightSelected, airlineSelected, customerTicketList);
+
+        //getting the customers checkout output
         currentCustomer.shoppingCartOutput();
 
+        // final output ending client
         System.out.println("\n\n\nPress enter to exit:");
         inputScanner.nextLine();
-
     }
 
-
-    private static int getValidUserInput(String outToUserArg,List<?> listToIterateThroughArg){
+    private static int getValidUserInput(String outToUserArg, List<?> listToIterateThroughArg) {
         //initial output
         System.out.println("\n" + outToUserArg);
         //method variables
@@ -166,25 +191,24 @@ public class AirlineClient {
         int userInputInt = 0;
 
         //loop while userInput is not a valid selection
-
-        while (!isValidNumber){
-            for(int i = 0; i < listToIterateThroughArg.size();i++){
-                System.out.println((i+ 1) + ". " + listToIterateThroughArg.get(i).toString());
+        while (!isValidNumber) {
+            for (int i = 0; i < listToIterateThroughArg.size(); i++) {
+                System.out.println((i + 1) + ". " + listToIterateThroughArg.get(i).toString());
             }
 
             String userIn = inputScanner.nextLine();
 
-            try{
+            try {
                 //user
                 userInputInt = Integer.parseInt(userIn);
 
-                if(userInputInt > 0 && userInputInt <= listToIterateThroughArg.size()){
+                if (userInputInt > 0 && userInputInt <= listToIterateThroughArg.size()) {
                     //is valid so returning and exiting method
                     return userInputInt;
-                }else {
+                } else {
                     System.out.println("You must select a number from the list");
                 }
-            }catch (NumberFormatException e){
+            } catch (NumberFormatException e) {
                 //not valid so return output to user and setting valid to false to continue while loop
                 System.out.println("You must select a number from the list");
                 isValidNumber = false;
@@ -193,8 +217,7 @@ public class AirlineClient {
         return 0;
     }
 
-
-    private static void getFullListOfAirlines(){
+    private static void getFullListOfAirlines() {
         Airline[] airlinesToChooseFrom = {
                 new Airline("TLG Airlines"),
                 new Airline("Amazon Airlines"),
@@ -210,7 +233,7 @@ public class AirlineClient {
         listOfAirlines.addAll(Arrays.asList(airlinesToChooseFrom));
     }
 
-    private static void getFullListOfLocations(){
+    private static void getFullListOfLocations() {
         //add all because intelliJ is smart
         Location[] locationsWithTimezone = {
                 new Location("San Francisco", Timezone.PST),
@@ -226,9 +249,8 @@ public class AirlineClient {
         listOfLocations.addAll(Arrays.asList(locationsWithTimezone));
     }
 
-    private static void clearConsole(){
+    private static void clearConsole() {
         System.out.print("\033[H\033[2J");
         System.out.flush();
     }
-
 }

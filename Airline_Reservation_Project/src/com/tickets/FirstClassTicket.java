@@ -2,16 +2,19 @@ package com.tickets;
 
 import com.locations.Location;
 
-public class FirstClassTicket implements TicketsCalculator{
+public class FirstClassTicket implements TicketsCalculator {
 
+    //fields
     private Location origin;
     private Location destination;
 
+    //constructor
     public FirstClassTicket(Location originArgs, Location destinationArgs) {
         origin = originArgs;
         destination = destinationArgs;
     }
 
+    //override method to calculate Ticket price by ticket type
     @Override
     public double calculateTicketPrice() {
         double firstClassTicketMultiplier = 2.5;
@@ -25,6 +28,7 @@ public class FirstClassTicket implements TicketsCalculator{
         return initialTicketPrice * firstClassTicketMultiplier;
     }
 
+    //methods to return origin and destination
     @Override
     public Location getOrigin() {
         return origin;

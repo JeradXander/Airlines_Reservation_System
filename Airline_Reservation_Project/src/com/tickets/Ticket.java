@@ -23,6 +23,6 @@ public class Ticket {
 
     @Override
     public String toString() {
-        return ticketsCalculator.toString() + "ticketId = " + ticketId;
+        return ticketsCalculator.toString() + "--> Seat number: " + ticketId;
     }
 }

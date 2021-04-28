@@ -27,6 +27,6 @@ public class FirstClassTicket implements TicketsCalculator{
 
     @Override
     public String toString() {
-        return "First class ticket ";
+        return "First class ticket";
     }
 }

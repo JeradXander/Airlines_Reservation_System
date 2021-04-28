@@ -1,34 +1,64 @@
 package com.shoppingcart;
 
+import com.airline.Airline;
 import com.airline.Flights;
 import com.tickets.Ticket;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.Objects;
 
 public class ShoppingCart {
     private int passengerId;
     private String passengerName;
     private String date;
     private Flights currentFlights;
+    private double totalPrice;
+    private String customerGuideline ;
+    Airline airline;
+    private String breakLine = "______________________________________________";
+    DecimalFormat decim = new DecimalFormat("0.00");
+
 
     List<Ticket> ticketList =  new ArrayList<>();
 
 
-
-    public ShoppingCart(){
-
-    }
-
-    public ShoppingCart(String dateArgs, Flights currentFlightsArgs, List<Ticket>ticketListArgs){
+    public ShoppingCart(Airline airlineArgs, String dateArgs, Flights currentFlightsArgs, List<Ticket>ticketListArgs){
+        airline =airlineArgs;
         this.date = dateArgs;
         this.currentFlights = currentFlightsArgs;
         this.ticketList = ticketListArgs;
+        buildGuidline();
+        processCart();
     }
 
+    private void buildGuidline(){
 
+        customerGuideline = "Flying from: " + ticketList.get(0).getOrig() + " -> " + ticketList.get(0).getDest()
+        + "\nAirline: " + airline.getAirLineName() + "\nDate selected: " + date
+        + "\nFlight selected: " + currentFlights.getFlightId();
+    }
+
+    public void processCart() {
+
+        System.out.println( "\nShopping Cart contains the following:\n"+breakLine +"\n\n"+ customerGuideline+ "\n");
+
+
+        for (Ticket ticket : ticketList) {
+            totalPrice += ticket.ticketPrice();
+            System.out.println(ticket.toString() + "\nTicket Price: $" + String.format("%.2f", ticket.ticketPrice()) + "\n");
+        }
+        System.out.println(breakLine + "\nItems Total: $" + String.format("%.2f", totalPrice));
+    }
+
+    public double getTotalPrice() {
+        return totalPrice;
+    }
+
+    @Override
+    public String toString() {
+        return "Tax= $" + totalPrice;
+    }
 
 //
 //    @Override

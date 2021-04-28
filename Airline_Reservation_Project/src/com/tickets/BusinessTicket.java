@@ -27,6 +27,17 @@ public class BusinessTicket implements TicketsCalculator{
     }
 
     @Override
+    public Location getOrigin() {
+        return origin;
+    }
+
+    @Override
+    public Location getDest() {
+        return destination;
+    }
+
+
+    @Override
     public String toString() {
         return "Business class ticket";
     }

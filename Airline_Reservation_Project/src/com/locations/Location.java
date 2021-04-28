@@ -2,14 +2,17 @@ package com.locations;
 
 public class Location {
 
+    //fields
     private String name;
     private Timezone timeZone;
 
+    //constructor
     public Location(String nameArgs, Timezone timeZoneArgs) {
         name = nameArgs;
         timeZone = timeZoneArgs;
     }
 
+    //getters and setters
     public String getName() {
         return name;
     }

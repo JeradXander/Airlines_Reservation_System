@@ -7,7 +7,7 @@ import java.util.List;
 
 public class Airline {
 
-
+    //fields
     private String airLineName;
     private Location origin;
     private Location destination;
@@ -16,11 +16,13 @@ public class Airline {
     List<Flights> flightsList;
     List<Flights> flightsListTest;
 
+    //constructor
     public Airline(String airplaneNameArg) {
         setAirLineName(airplaneNameArg);
 
     }
 
+    //getters and setters
     public String getAirLineName() {
         return airLineName;
     }
@@ -29,27 +31,7 @@ public class Airline {
         airLineName = airplaneArg;
     }
 
-    public HashMap<String, List<Flights>> getAirlineFlights() {
-
-        flightsList = new ArrayList<>();
-        flightsList.add(new Flights(1000,getOrigin(),getDestination()));
-        flightsList.add(new Flights(33000,getOrigin(),getDestination()));
-
-        flightsListTest = new ArrayList<>();
-
-        airlineFlights = new HashMap<>();
-        airlineFlights.put("04/26/2021",flightsList);
-        airlineFlights.put("04/27/2021",flightsList);
-        airlineFlights.put("04/28/2021",flightsList);
-        airlineFlights.put("04/29/2021",flightsList);
-        airlineFlights.put("04/30/2021",flightsList);
-        airlineFlights.put("05/01/2021",flightsList);
-        airlineFlights.put("05/02/2021",flightsList);
-
-
-        return airlineFlights;
-    }
-
+    //getters and setters
     public Location getOrigin() {
         return origin;
     }
@@ -64,6 +46,28 @@ public class Airline {
 
     public void setDestination(Location destinationArg) {
         this.destination = destinationArg;
+    }
+
+    //initial airline flights
+    public HashMap<String, List<Flights>> getAirlineFlights() {
+
+        flightsList = new ArrayList<>();
+        flightsList.add(new Flights(1000, getOrigin(), getDestination()));
+        flightsList.add(new Flights(33000, getOrigin(), getDestination()));
+
+        flightsListTest = new ArrayList<>();
+
+        airlineFlights = new HashMap<>();
+        airlineFlights.put("04/26/2021", flightsList);
+        airlineFlights.put("04/27/2021", flightsList);
+        airlineFlights.put("04/28/2021", flightsList);
+        airlineFlights.put("04/29/2021", flightsList);
+        airlineFlights.put("04/30/2021", flightsList);
+        airlineFlights.put("05/01/2021", flightsList);
+        airlineFlights.put("05/02/2021", flightsList);
+
+
+        return airlineFlights;
     }
 
     @Override

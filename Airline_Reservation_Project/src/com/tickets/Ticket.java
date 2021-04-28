@@ -17,9 +17,18 @@ public class Ticket {
 
     }
 
-    public double pay(){
+    public double ticketPrice(){
         return ticketsCalculator.calculateTicketPrice();
     }
+
+    public Location getOrig(){
+        return ticketsCalculator.getOrigin();
+    }
+
+    public Location getDest(){
+        return ticketsCalculator.getDest();
+    }
+
 
     @Override
     public String toString() {

@@ -3,16 +3,19 @@ package com.tickets;
 import com.locations.Location;
 import com.locations.Timezone;
 
-public class BusinessTicket implements TicketsCalculator{
+public class BusinessTicket implements TicketsCalculator {
 
+    //fields
     private Location origin;
     private Location destination;
 
+    //constructor
     public BusinessTicket(Location originArgs, Location destinationArgs) {
         origin = originArgs;
         destination = destinationArgs;
     }
 
+    //method to get price by ticket price
     @Override
     public double calculateTicketPrice() {
         double businessTicketMultiplier = 1.6;
@@ -26,6 +29,7 @@ public class BusinessTicket implements TicketsCalculator{
         return initialTicketPrice * businessTicketMultiplier;
     }
 
+    //getting origin and destination
     @Override
     public Location getOrigin() {
         return origin;

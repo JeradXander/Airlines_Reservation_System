@@ -4,6 +4,7 @@ import com.airline.Airline;
 import com.airline.Flights;
 import com.locations.Location;
 import com.locations.Timezone;
+import com.passengers.Customer;
 import com.tickets.Ticket;
 
 import java.sql.Time;
@@ -18,6 +19,7 @@ public class AirlineClient {
     private static List<Ticket> customerTicketList = new ArrayList<>();
     private static List<String> yesNo = new ArrayList<String>(Arrays.asList("Yes","No"));
     //values
+    private static Customer currentCustomer;
     private static int valueReturnedFromInputMethod;
     private static Location origin;
     private static Location destination;
@@ -26,6 +28,7 @@ public class AirlineClient {
     private static boolean flightHasTickets = false;
     private static String customerGuideline = "";
     private static String breakLine = "";
+
 
 
     //scanner
@@ -120,8 +123,8 @@ public class AirlineClient {
         while(keepBuyingTickets == 0) {
             clearConsole();
             //outputting tickets and getting the selected ticket
-            int ticketNum = getValidUserInput(customerGuideline + "\n" +
-                    breakLine + "\nTicket(s) selected: " + customerTicketList.size() + "\n\nPlease select the ticket", flightSelected.getTickets());
+            int ticketNum = getValidUserInput(customerGuideline  + "\nTicket(s) selected: " + customerTicketList.size()+ "\n"+
+                    breakLine + "\n" + "Please select the ticket", flightSelected.getTickets());
 
             //adding ticket to customers list for now
             customerTicketList.add(flightSelected.getTickets().get(ticketNum - 1));
@@ -138,16 +141,19 @@ public class AirlineClient {
                 }
                 clearConsole();
 
-                keepBuyingTickets = getValidUserInput(customerGuideline + "\n" +
-                        breakLine + "\nTicket(s) selected: " + customerTicketList.size() + "\nWould you Like to continue buying more tickets on flight " + flightSelected.getFlightId() + " leaving on " + dates.get(dateSelected -1),yesNo) -1;
+                keepBuyingTickets = getValidUserInput(customerGuideline  + "\nTicket(s) selected: " + customerTicketList.size()+ "\n"+
+                                                      breakLine + "\n" +"Would you Like to continue buying more tickets on flight "
+                                                      + flightSelected.getFlightId() + " leaving on " + dates.get(dateSelected -1) + "\nSelecting no will take you to checkout!",yesNo) -1 ;
             }
         }
-        //test output
-        System.out.println("You're looking at flying from " + origin + " to " + destination + " with " + airlineSelected + " on " + dates.get(valueReturnedFromInputMethod - 1) + (".") + " on flight " +
-                           airlineSelected.getAirlineFlights().get(dates.get(dateSelected -1)).get(valueReturnedFromInputMethod-1) + " ticket number " + customerTicketList.toString());
 
-        //test output to make sure ticket were updated.
-        System.out.println(flightSelected.getTickets());
+        clearConsole();
+        currentCustomer = new Customer(dates.get(dateSelected-1),flightSelected,airlineSelected,customerTicketList);
+
+        currentCustomer.shoppingCartOutput();
+
+        System.out.println("\n\n\nPress enter to exit:");
+        inputScanner.nextLine();
 
     }
 

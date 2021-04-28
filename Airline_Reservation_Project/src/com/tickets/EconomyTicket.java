@@ -2,13 +2,14 @@ package com.tickets;
 
 import com.locations.Location;
 
-public class EconomyTicket implements TicketsCalculator{
+public class EconomyTicket implements TicketsCalculator {
 
+    //fields
     private Location origin;
     private Location destination;
     private int bags = 0;
 
-
+    //constructors
     public EconomyTicket(Location originArgs, Location destinationArgs) {
         origin = originArgs;
         destination = destinationArgs;
@@ -21,15 +22,16 @@ public class EconomyTicket implements TicketsCalculator{
         setBags(bagNumbers);
     }
 
+    //getters and setters
     public int getBags() {
         return bags;
     }
 
     public void setBags(int bags) {
-        if (bags >=0 && bags <= 2)
-        this.bags = bags;
+        if (bags >= 0 && bags <= 2) { this.bags = bags; }
     }
 
+    //method to calculate price by ticket type
     @Override
     public double calculateTicketPrice() {
         //calculates the difference of the two different time zones. larger difference means more
@@ -42,6 +44,7 @@ public class EconomyTicket implements TicketsCalculator{
         return initialTicketPrice + bagFee;
     }
 
+    //methods to return origin and destination
     @Override
     public Location getOrigin() {
         return origin;
@@ -51,7 +54,6 @@ public class EconomyTicket implements TicketsCalculator{
     public Location getDest() {
         return destination;
     }
-
 
     @Override
     public String toString() {

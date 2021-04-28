@@ -65,19 +65,19 @@ public class Flights {
 
     private void initialTicketList(){
         tickets.add(new Ticket(10, new EconomyTicket(origin, destination)));
-        tickets.add(new Ticket(10, new EconomyTicket(origin, destination)));
-        tickets.add(new Ticket(10, new EconomyTicket(origin, destination)));
-        tickets.add(new Ticket(10, new EconomyTicket(origin, destination)));
-        tickets.add(new Ticket(10, new EconomyTicket(origin, destination)));
-        tickets.add(new Ticket(10, new EconomyTicket(origin, destination)));
-        tickets.add(new Ticket(10, new EconomyTicket(origin, destination)));
+        tickets.add(new Ticket(11, new EconomyTicket(origin, destination)));
+        tickets.add(new Ticket(12, new EconomyTicket(origin, destination)));
+        tickets.add(new Ticket(13, new EconomyTicket(origin, destination)));
+        tickets.add(new Ticket(14, new EconomyTicket(origin, destination)));
+        tickets.add(new Ticket(15, new EconomyTicket(origin, destination)));
+        tickets.add(new Ticket(16, new EconomyTicket(origin, destination)));
 
-        tickets.add(new Ticket(11, new BusinessTicket(origin, destination)));
-        tickets.add(new Ticket(11, new BusinessTicket(origin, destination)));
-        tickets.add(new Ticket(11, new BusinessTicket(origin, destination)));
-        tickets.add(new Ticket(11, new BusinessTicket(origin, destination)));
+        tickets.add(new Ticket(17, new BusinessTicket(origin, destination)));
+        tickets.add(new Ticket(18, new BusinessTicket(origin, destination)));
+        tickets.add(new Ticket(19, new BusinessTicket(origin, destination)));
+        tickets.add(new Ticket(20, new BusinessTicket(origin, destination)));
 
-        tickets.add(new Ticket(12, new FirstClassTicket(origin, destination)));
-        tickets.add(new Ticket(12, new FirstClassTicket(origin, destination)));
+        tickets.add(new Ticket(21, new FirstClassTicket(origin, destination)));
+        tickets.add(new Ticket(22, new FirstClassTicket(origin, destination)));
     }
 }

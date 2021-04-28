@@ -28,6 +28,6 @@ public class BusinessTicket implements TicketsCalculator{
 
     @Override
     public String toString() {
-        return "Business class ticket ";
+        return "Business class ticket";
     }
 }

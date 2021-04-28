@@ -65,7 +65,19 @@ public class Flights {
 
     private void initialTicketList(){
         tickets.add(new Ticket(10, new EconomyTicket(origin, destination)));
+        tickets.add(new Ticket(10, new EconomyTicket(origin, destination)));
+        tickets.add(new Ticket(10, new EconomyTicket(origin, destination)));
+        tickets.add(new Ticket(10, new EconomyTicket(origin, destination)));
+        tickets.add(new Ticket(10, new EconomyTicket(origin, destination)));
+        tickets.add(new Ticket(10, new EconomyTicket(origin, destination)));
+        tickets.add(new Ticket(10, new EconomyTicket(origin, destination)));
+
         tickets.add(new Ticket(11, new BusinessTicket(origin, destination)));
+        tickets.add(new Ticket(11, new BusinessTicket(origin, destination)));
+        tickets.add(new Ticket(11, new BusinessTicket(origin, destination)));
+        tickets.add(new Ticket(11, new BusinessTicket(origin, destination)));
+
+        tickets.add(new Ticket(12, new FirstClassTicket(origin, destination)));
         tickets.add(new Ticket(12, new FirstClassTicket(origin, destination)));
     }
 }

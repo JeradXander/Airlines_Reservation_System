@@ -16,6 +16,7 @@ public class AirlineClient {
     private static List<Location> listOfLocations = new ArrayList<>();
     private static List<Airline> listOfAirlines = new ArrayList<>();
     private static List<Ticket> customerTicketList = new ArrayList<>();
+    private static List<String> yesNo = new ArrayList<String>(Arrays.asList("Yes","No"));
     //values
     private static int valueReturnedFromInputMethod;
     private static Location origin;
@@ -85,14 +86,24 @@ public class AirlineClient {
             }
         }
 
-        //outputing tickets and getting the selected ticket
-        int ticketNum = getValidUserInput("Please select the ticket",flightSelected.getTickets());
+        int keepBuyingTickets = 0;
 
-        //adding ticket to customers list for now
-        customerTicketList.add(flightSelected.getTickets().get(ticketNum-1));
-        //removing ticket from available tickets on flight
-        flightSelected.getTickets().remove(ticketNum-1);
+        while(keepBuyingTickets == 0) {
+            //outputing tickets and getting the selected ticket
+            int ticketNum = getValidUserInput("Please select the ticket", flightSelected.getTickets());
 
+            //adding ticket to customers list for now
+            customerTicketList.add(flightSelected.getTickets().get(ticketNum - 1));
+            //removing ticket from available tickets on flight
+            flightSelected.getTickets().remove(ticketNum - 1);
+
+            if(flightSelected.getTickets().size() == 0){
+                System.out.println("You just selected the last ticket");
+                keepBuyingTickets = 1;
+            }else {
+                keepBuyingTickets = getValidUserInput("Would you Like to continue buying more tickets on flight " + flightSelected.getFlightId() + " leaving on " + dates.get(dateSelected -1),yesNo) -1;
+            }
+        }
         //test output
         System.out.println("You're looking at flying from " + origin + " to " + destination + " with " + airlineSelected + " on " + dates.get(valueReturnedFromInputMethod - 1) + (".") + " on flight " +
                            airlineSelected.getAirlineFlights().get(dates.get(dateSelected -1)).get(valueReturnedFromInputMethod-1) + " ticket number " + customerTicketList.toString());

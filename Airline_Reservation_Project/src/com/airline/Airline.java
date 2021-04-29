@@ -12,9 +12,8 @@ public class Airline {
     private Location origin;
     private Location destination;
 
-    HashMap<String, List<Flights>> airlineFlights;
-    List<Flights> flightsList;
-    List<Flights> flightsListTest;
+    HashMap<String, List<Flight>> airlineFlights;
+    List<Flight> flightsList;
 
     //constructor
     public Airline(String airplaneNameArg) {
@@ -48,24 +47,23 @@ public class Airline {
     }
 
     //initial airline flights
-    public HashMap<String, List<Flights>> getAirlineFlights() {
+    public HashMap<String, List<Flight>> getAirlineFlights() {
 
+        //creating flights
         flightsList = new ArrayList<>();
-        flightsList.add(new Flights(1000, getOrigin(), getDestination(), "10:00 AM"));
-        flightsList.add(new Flights(33000, getOrigin(), getDestination(),"4:00 PM"));
+        flightsList.add(new Flight(1000, getOrigin(), getDestination(), "10:00 AM"));
+        flightsList.add(new Flight(33000, getOrigin(), getDestination(), "4:00 PM"));
 
-        flightsListTest = new ArrayList<>();
-
+        //creating hashmap
         airlineFlights = new HashMap<>();
-        airlineFlights.put("04/26/2021", flightsList);
-        airlineFlights.put("04/27/2021", flightsList);
-        airlineFlights.put("04/28/2021", flightsList);
         airlineFlights.put("04/29/2021", flightsList);
         airlineFlights.put("04/30/2021", flightsList);
         airlineFlights.put("05/01/2021", flightsList);
         airlineFlights.put("05/02/2021", flightsList);
-
-
+        airlineFlights.put("05/03/2021", flightsList);
+        airlineFlights.put("05/04/2021", flightsList);
+        airlineFlights.put("05/05/2021", flightsList);
+        //returning hashmap
         return airlineFlights;
     }
 

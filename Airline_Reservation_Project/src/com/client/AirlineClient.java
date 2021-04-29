@@ -126,7 +126,7 @@ public class AirlineClient {
         }
 
         //adding info to guildine string
-        customerGuideline += "\nFlight selected: " + flightSelected.getFlightId();
+        customerGuideline += "\n" + flightSelected.toString();
 
         //variable for while loop
         int keepBuyingTickets = 0;

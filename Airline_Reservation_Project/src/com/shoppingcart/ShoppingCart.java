@@ -44,7 +44,7 @@ public class ShoppingCart {
         //creating variable
         customerGuideline = "Flying from: " + ticketList.get(0).getOrig() + " -> " + ticketList.get(0).getDest()
                             + "\nAirline: " + airline.getAirLineName() + "\nDate selected: " + date
-                            + "\nFlight selected: " + currentFlights.getFlightId();
+                            + "\n" + currentFlights.toString();
     }
 
     ///method to process and output tickets and cart

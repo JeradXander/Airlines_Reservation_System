@@ -14,12 +14,14 @@ public class Flights {
     private List<Ticket> tickets = new ArrayList<>();
     private Location origin;
     private Location destination;
+    private String roughTimeOfFlight;
 
     //constructor
-    public Flights(int flightIdArg, Location originArg, Location destinationArg) {
+    public Flights(int flightIdArg, Location originArg, Location destinationArg, String timeArgs) {
         flightId = flightIdArg;
         origin = originArg;
         destination = destinationArg;
+        roughTimeOfFlight = timeArgs;
         initialTicketList();
     }
 
@@ -61,7 +63,7 @@ public class Flights {
 
     @Override
     public String toString() {
-        return String.valueOf(flightId);
+        return "Flight Number: " + String.valueOf(flightId)  + "-> Leaving at " + roughTimeOfFlight ;
     }
 
     //adding initial tickets for flight

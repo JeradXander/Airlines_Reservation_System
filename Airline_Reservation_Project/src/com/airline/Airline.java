@@ -19,7 +19,6 @@ public class Airline {
     //constructor
     public Airline(String airplaneNameArg) {
         setAirLineName(airplaneNameArg);
-
     }
 
     //getters and setters
@@ -52,8 +51,8 @@ public class Airline {
     public HashMap<String, List<Flights>> getAirlineFlights() {
 
         flightsList = new ArrayList<>();
-        flightsList.add(new Flights(1000, getOrigin(), getDestination()));
-        flightsList.add(new Flights(33000, getOrigin(), getDestination()));
+        flightsList.add(new Flights(1000, getOrigin(), getDestination(), "10:00 AM"));
+        flightsList.add(new Flights(33000, getOrigin(), getDestination(),"4:00 PM"));
 
         flightsListTest = new ArrayList<>();
 

@@ -7,7 +7,7 @@ import com.tickets.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Flights {
+public class Flight {
 
     //fields
     private int flightId;
@@ -17,7 +17,7 @@ public class Flights {
     private String roughTimeOfFlight;
 
     //constructor
-    public Flights(int flightIdArg, Location originArg, Location destinationArg, String timeArgs) {
+    public Flight(int flightIdArg, Location originArg, Location destinationArg, String timeArgs) {
         flightId = flightIdArg;
         origin = originArg;
         destination = destinationArg;
@@ -60,6 +60,9 @@ public class Flights {
         this.destination = destination;
     }
 
+    public String getRoughTimeOfFlight() {
+        return roughTimeOfFlight;
+    }
 
     @Override
     public String toString() {

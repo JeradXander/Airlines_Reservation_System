@@ -1,13 +1,12 @@
 package com.client;
 
 import com.airline.Airline;
-import com.airline.Flights;
+import com.airline.Flight;
 import com.locations.Location;
 import com.locations.Timezone;
 import com.passengers.Customer;
 import com.tickets.Ticket;
 
-import java.sql.Time;
 import java.util.*;
 
 public class AirlineClient {
@@ -24,7 +23,7 @@ public class AirlineClient {
     private static Location origin;
     private static Location destination;
     private static Airline airlineSelected;
-    private static Flights flightSelected;
+    private static Flight flightSelected;
     private static boolean flightHasTickets = false;
     private static String customerGuideline = "";
     private static String breakLine = "";

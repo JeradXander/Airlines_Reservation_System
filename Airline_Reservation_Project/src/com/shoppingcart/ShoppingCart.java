@@ -1,11 +1,10 @@
 package com.shoppingcart;
 
 import com.airline.Airline;
-import com.airline.Flights;
+import com.airline.Flight;
 import com.tickets.Ticket;
 
 import java.text.DecimalFormat;
-import java.util.ArrayList;
 import java.util.List;
 
 public class ShoppingCart {
@@ -19,16 +18,16 @@ public class ShoppingCart {
     private String customerGuideline;
     private String breakLine = "______________________________________________";
     private double totalPrice;
-    private Flights currentFlights;
+    private Flight currentFlight;
     private Airline airline;
     List<Ticket> ticketList;
     private DecimalFormat decim = new DecimalFormat("0.00");
 
     //constructor
-    public ShoppingCart(Airline airlineArgs, String dateArgs, Flights currentFlightsArgs, List<Ticket> ticketListArgs) {
+    public ShoppingCart(Airline airlineArgs, String dateArgs, Flight currentFlightArgs, List<Ticket> ticketListArgs) {
         airline = airlineArgs;
         this.date = dateArgs;
-        this.currentFlights = currentFlightsArgs;
+        this.currentFlight = currentFlightArgs;
         this.ticketList = ticketListArgs;
         buildGuidline();
         processCart();
@@ -44,7 +43,7 @@ public class ShoppingCart {
         //creating variable
         customerGuideline = "Flying from: " + ticketList.get(0).getOrig() + " -> " + ticketList.get(0).getDest()
                             + "\nAirline: " + airline.getAirLineName() + "\nDate selected: " + date
-                            + "\n" + currentFlights.toString();
+                            + "\n" + currentFlight.toString();
     }
 
     ///method to process and output tickets and cart
